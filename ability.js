@@ -1,14 +1,14 @@
 //var val = 0;
 var calculateAbilities = function(score)
 {
-	var jody = parseInt(score);
-	var mod = Math.floor((jody - 10) / 2);
+	var ability_score = parseInt(score);
+	var mod = Math.floor((ability_score - 10) / 2);
 
 	var scoreArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
 	//var modArray = [-5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17];
 	var pointArray = [0, 0, 0, 0, 0, 0, -4, -2, -1, 0, 1, 2, 3, 5, 7, 10, 13, 17, 0, 0];
-	
-	var i = scoreArray.indexOf(jody);
+
+	var i = scoreArray.indexOf(ability_score);
 	return [mod, pointArray[i]];
 };
 
@@ -82,7 +82,7 @@ var calculateRacials = function()
 
 	/*****************************************************************************
 	pass the actual points to calculate abilities and store in actual array
-	get the first index in the array (the mod) and insert into the correct cell 
+	get the first index in the array (the mod) and insert into the correct cell
 	******************************************************************************/
 	var actualStr = calculateAbilities(sPts);
 	$("#actualStrMod").html(actualStr[0]);
@@ -308,7 +308,7 @@ var resetApp = function()
  		$("#dexPts").html(strength[1]);
  		remainingPoints(val);
  		calculateRacials();
- 	}); 
+ 	});
 
  	$( "#spinnerCON" ).spinner({ max: 18, min: 7}).val(10);
  	$("#spinnerCON").bind("spinstop", function(){
